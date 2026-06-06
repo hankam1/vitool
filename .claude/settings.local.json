@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rustc --version)",
+      "Bash(cargo --version)",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(cargo tauri *)",
+      "PowerShell($r = \\(Get-Command rustc -ErrorAction SilentlyContinue\\); if \\($r\\) { rustc --version } else { \"rustc: NOT FOUND\" }; $c = \\(Get-Command cargo -ErrorAction SilentlyContinue\\); if \\($c\\) { cargo --version } else { \"cargo: NOT FOUND\" }; $t = \\(Get-Command \"cargo-tauri\" -ErrorAction SilentlyContinue\\); if \\($t\\) { cargo tauri --version } else { \"cargo-tauri: NOT FOUND\" }; \"WebView2: \" + \\(\\(Test-Path 'HKLM:\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\EdgeUpdate\\\\Clients\\\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}'\\) -or \\(Test-Path 'HKLM:\\\\SOFTWARE\\\\Microsoft\\\\EdgeUpdate\\\\Clients\\\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}'\\)\\))",
+      "Bash(mkdir -p .design)",
+      "Bash(curl -sL \"https://api.anthropic.com/v1/design/h/DOG4OgIbYytbU4wyQeNHWA\" -o .design/index_raw.txt -w \"HTTP %{http_code} | %{content_type} | %{size_download} bytes\\\\n\")",
+      "WebFetch(domain:tauri.app)",
+      "WebFetch(domain:v2.tauri.app)",
+      "WebSearch"
+    ]
+  }
+}
